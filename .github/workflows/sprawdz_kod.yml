@@ -1,0 +1,17 @@
+name: Inspektor Kodu Bash
+
+# Kiedy robot ma ruszyć? Jak tylko będzie zrobione git push
+on: [push]
+
+jobs:
+  testowanie_kodu:
+  #Gdzie robot ma pracować? Prosimy Githuba o darmowy serwer z najnowszym systemem Linux
+    runs-on: ubuntu-latest
+
+    steps:
+    #Krok 1: Pobieranie kodu na darmowy serwer 
+      - name: Pobieranie kodu
+        uses: actions/checkout@v4
+    #Krok 2: Uruchom narzędzie ShellCheck na moim skrypcie 
+      - name: Sprawdzanie błędów w Bashu
+        run: shellcheck zmien_nazwy.sh
