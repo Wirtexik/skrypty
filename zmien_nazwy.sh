@@ -28,7 +28,7 @@ for PLIK in "$FOLDER"/*; do
 done
 
 echo "----------------------------------------------"
-read -p "Zatwierdzasz te zmiany? (T/N): " DECYZJA
+read -r -p "Zatwierdzasz te zmiany? (T/N): " DECYZJA
 
 if [ "$DECYZJA" = "T" ] || [ "$DECYZJA" = "t" ]; then
     Licznik=1
